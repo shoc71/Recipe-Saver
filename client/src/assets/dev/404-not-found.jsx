@@ -19,8 +19,8 @@ const styles = {
         justifyContent: 'center',
         height: '100vh',
         textAlign: 'center',
-        backgroundColor: '#f4f4f4',
-        color: '#333',
+        backgroundColor: '#FFF8DC',
+        color: '#2E8B57',
         padding: '1em',
     },
     title: {
@@ -33,7 +33,7 @@ const styles = {
     },
     link: {
         textDecoration: 'none',
-        color: '#007BFF',
+        color: '008B8B',
         fontWeight: 'bold',
         fontSize: '1.2rem',
     },
