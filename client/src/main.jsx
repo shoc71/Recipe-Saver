@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
 import App from './App.jsx';
-import ErrorPage from './pages/NotFoundPage.jsx';
+import ErrorPage from './assets/dev/404-not-found.jsx';
 
 // Define the routes using createBrowserRouter
 const router = createBrowserRouter([

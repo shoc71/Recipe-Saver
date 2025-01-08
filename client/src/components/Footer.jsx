@@ -10,7 +10,7 @@ const styles = {
 };
 
 
-function footer() {
+function Footer() {
   return (
     <footer style={styles.footerStyle} className="footer">
       <h1 style={styles.footerStyle}>Recipe-Saver</h1>
