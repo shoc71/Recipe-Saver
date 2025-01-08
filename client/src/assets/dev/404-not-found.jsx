@@ -19,8 +19,8 @@ const styles = {
         justifyContent: 'center',
         height: '100vh',
         textAlign: 'center',
-        backgroundColor: '#FFFSDC',
-        color: '#2E8B57',
+        backgroundColor: '#f4f4f4',
+        color: '#333',
         padding: '1em',
     },
     title: {

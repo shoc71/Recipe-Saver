@@ -4,23 +4,18 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
 import App from './App.jsx';
-import ErrorPage from './pages/NotFoundPage.jsx';
-// import MainPage from './pages/MainPage.tsx';
-// import VolunteerPage from './pages/VolunteerPage.tsx';
-// import VolunteerForm from './pages/VolunteerForm.tsx';
-// import EditVolunteer from './pages/EditVolunteer.tsx';
-// import EditWork from './pages/EditWork.tsx';
+import ErrorPage from './assets/dev/404-not-found.jsx';
 
 // Define the routes using createBrowserRouter
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorPage />, // Renders on any routing error
+    errorElement: <ErrorPage />, 
     children: [
       {
         index: true,
-        element: <div>Home Page</div>, // Replace this with your actual MainPage if needed
+        element: <div>Home Page</div>, // testing
       },
     ],
   },
