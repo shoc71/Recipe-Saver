@@ -4,19 +4,29 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
 import App from './App.jsx';
-import ErrorPage from './assets/dev/404-not-found.jsx';
+import NotFoundPage from './Pages/404-not-found.jsx';
+import Login from './Pages/login.jsx'
+import Register from './Pages/register.jsx'
 
 // Define the routes using createBrowserRouter
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorPage />, 
+    errorElement: <NotFoundPage />, 
     children: [
       {
         index: true,
-        element: <div>Home Page</div>, // testing
+        element: <div>Home Page</div>, 
       },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/register',
+        element: <Register />, 
+      },  
     ],
   },
 ]);
