@@ -1,13 +1,31 @@
+CREATE DATABASE React_Recipe_Saver
+
 CREATE TABLE user_login (
-    id serial PRIMARY KEY,
-    name VARCHAR(100) NOT NULL UNIQUE,
-    email,
-    pass,
+    UserID serial PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    passkey VARCHAR(100) NOT NULL UNIQUE,
 );
+INSERT INTO user_login (username, email, passkey)
 
-INSERT INTO user_login (name, email, pass)
+CREATE TABLE Recipes (
+    RecipeID serial PRIMARY KEY,
+    RecipeName varchar(255),
+    RecipeClass varchar(255),
+    Ingredients varchar(255),
+    RecipeAllergens(255),
+    Steps varchar(1000),
+);
+INSERT INTO Recipes (RecipeName, RecipeClass, RecipeAllergens, Steps)
 
-grocery
+CREATE TABLE Ingredients (
+    IngredientID serial PRIMARY KEY,
+    IngredientName varchar(255),
+    IngredientClass varchar(255),
+    IngredientAllergens varchar(255),
+);
+INSERT INTO Ingredients (IngredientName, IngredientClass, IngredientAllergens)
+/*grocery
 name
 veg
 nutritional
@@ -18,5 +36,4 @@ recipe
 
 gorcery [array of grocery items]
 cooktime
-steps
-
+steps*/
