@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -16,15 +17,32 @@ const Login = () => {
     return (
     <>
         <form onSubmit={handleSubmit}>
-            <lable htmlFor="email">Email</lable>
-            <input value={email} type="email" placeholder="youremail@email.com" id="email" name="email"/>
-            <lable htmlFor="password">Passwordl</lable>
-            <input value={pass} type="password" placeholder="********" id="password" name="password" />
-         <button type="submit">Login</button>
+            <label htmlFor="email">Email</label>
+            <input value={email} onChange={(e)=> setEmail(e.target.value)}
+            type="email" placeholder="youremail@email.com" id="email" name="email" required/>
+            <label htmlFor="password">Passwordl</label>
+            <input value={pass} onChange={(e)=> setPass(e.target.value)}
+            type="password" placeholder="********" id="password" name="password" required/>
          </form>
-         <button>Register Here</button>
+         <Link to="/register"><button style={styles.buttonStyle}>Register</button></Link>
     </>
     )
 }
+const styles = { 
+    navbarStyle: { 
+        background: 'tan', 
+        justifyContent: 'flex-end', 
+        display: 'flex', 
+        gap: '1rem', 
+        padding: '0.5rem', }, 
 
+    buttonStyle: { 
+            padding: '0.5rem 1rem', 
+            background: 'tan', 
+            color: 'white', 
+            border: 'none', 
+            borderRadius: '5px', 
+            textDecoration: 'none', 
+            cursor: 'pointer', }, 
+        };
 export default Login;
