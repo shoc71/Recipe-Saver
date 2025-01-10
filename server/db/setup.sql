@@ -12,6 +12,7 @@ CREATE TABLE Recipes (
     RecipeID serial PRIMARY KEY,
     RecipeName varchar(255),
     RecipeClass varchar(255),
+    --RecipeClass ex:appetizer/dessert/entreé/pastry etc.--
     Ingredients varchar(255),
     RecipeAllergens(255),
     Steps varchar(1000),
