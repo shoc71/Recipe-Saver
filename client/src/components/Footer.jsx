@@ -1,3 +1,4 @@
+import react from 'react';
 import '../styles/Footer.css';
 
 const styles = {
@@ -5,7 +6,7 @@ const styles = {
     background: 'tan',
   },
   footerStyle: {
-    fontSize: '100px',
+    fontSize: '5px',
   },
 };
 
@@ -13,14 +14,15 @@ const styles = {
 function Footer() {
   return (
     <footer style={styles.footerStyle} className="footer">
+      <hr className = "footer-seperator" />
       <h1 style={styles.footerStyle}>Recipe-Saver</h1>
       <div className="row">
-            <div className="col-md-3 text-center text-md-left mb-3 mb-md-0">
+            <div className="LEFT col-md-3 text-center text-md-left mb-3 mb-md-0">
                 <img src="./assets/images/logospinnerrescaled.png" alt="Logo" class="img-fluid mb-2"/>
                 <p className="small"><b>© 2024 Ctrl Alt Elite. All rights reserved.</b></p>
             </div>
     
-            <div className="col-md-3 text-center text-md-left mb-3 mb-md-0">
+            <div className="CENTER col-md-3 text-center text-md-left mb-3 mb-md-0">
                 <h5><b>Contact Us</b></h5>
                 <ul className="list-unstyled">
                     <li>Email: <a href="mailto:info@company.com" class="text-white">info@company.com</a></li>
@@ -36,7 +38,7 @@ function Footer() {
                 <a href="https://x.com/elonmusk" class="text-white" target="_blank">Twitter</a> | 
                 <a href="https://www.instagram.com/zuck/" class="text-white" target="_blank">Instagram</a>
             </div>
-            <div className="col-md-3 text-center text-md-left">
+            <div className="RIGHT col-md-3 text-center text-md-left">
                 <h5><b>Development Team</b></h5>
                 <ul class="list-unstyled">
                     <li>Rosemarie Lupi: <a href="https://github.com/RML-png">RML-png</a></li>
@@ -48,6 +50,7 @@ function Footer() {
             </div>
 
         </div>
+        <hr className = "footer-seperator" />
     </footer>
   );
 }

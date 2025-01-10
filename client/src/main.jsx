@@ -5,6 +5,8 @@ import './index.css';
 
 import App from './App.jsx';
 import ErrorPage from './assets/dev/404-not-found.jsx';
+import Login from './assets/dev/login.jsx';
+import Register from './assets/dev/register.jsx';
 
 // Define the routes using createBrowserRouter
 const router = createBrowserRouter([
@@ -15,8 +17,18 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>Home Page</div>, // testing
+        element: <Login />
+        //element: <div>Home Page</div>, // testing
       },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/register',
+        element: <Register />
+      },  
+
     ],
   },
 ]);
