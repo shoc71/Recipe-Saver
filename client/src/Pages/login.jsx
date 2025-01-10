@@ -17,9 +17,9 @@ const Login = () => {
     <>
         <form onSubmit={handleSubmit}>
             <lable htmlFor="email">Email</lable>
-            <input value={email} type="email" pllaceholder="youremail@email.com" id="email" name="email"/>
+            <input value={email} type="email" placeholder="youremail@email.com" id="email" name="email"/>
             <lable htmlFor="password">Passwordl</lable>
-            <input value={pass} type="password" pllaceholder="********" id="password" name="password" />
+            <input value={pass} type="password" placeholder="********" id="password" name="password" />
          <button type="submit">Login</button>
          </form>
          <button>Register Here</button>

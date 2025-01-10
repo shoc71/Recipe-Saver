@@ -3,10 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css'
-import Header from ".../components/Header";
-import Section from ".../components/Section";
-import Navbar from ".../components/Navbar";
-import Header from ".../components/Footer";
+import Header from "./components/Header";
+import Section from "./components/Section";
+import Navbar from "./components/Navbar";
+import Header from "./components/Footer";
 
 function grocery() {
     return (
