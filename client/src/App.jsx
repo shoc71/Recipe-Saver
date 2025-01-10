@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import { Outlet } from 'react-router-dom'; // Outlet renders child routes
 
 // Import your components
 import Header from './components/Header';
@@ -14,6 +15,7 @@ function App() {
     <>
       <Header />
       <Navbar />
+      <Outlet /> {/* Child routes will render here */}
       <Section />
       <Footer />
     </>
