@@ -16,7 +16,6 @@ function App() {
       <Header />
       <Navbar />
       <Outlet /> {/* Child routes will render here */}
-      <Section />
       <Footer />
     </>
   );

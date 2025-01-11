@@ -1,48 +1,81 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-    //this will capture the information when user submits
-    //prevent Default will prevent it from reloading and losing data
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        console.log()
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle login logic here
+  };
 
-    }
+  const styles = {
+    container: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+      backgroundColor: 'tan',
+    },
+    form: {
+      backgroundColor: 'tan',
+      padding: '20px',
+      borderRadius: '5px',
+      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+    },
+    input: {
+      margin: '10px -10px',
+      padding: '10px',
+      border: '1px solid #ccc',
+      borderRadius: '4px',
+      width: '100%',
+    },
+    button: {
+      padding: '10px',
+      backgroundColor: '#F5F5DC',
+      color: '#fff',
+      border: 'none',
+      borderRadius: '4px',
+      cursor: 'pointer',
+    },
+    button2: {
+        padding: '10px',
+        backgroundColor: '#F5F5DC',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+        margin: '20px'
+      },
+  };
 
-    return (
-    <>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email</label>
-            <input value={email} onChange={(e)=> setEmail(e.target.value)}
-            type="email" placeholder="youremail@email.com" id="email" name="email" required/>
-            <label htmlFor="password">Passwordl</label>
-            <input value={pass} onChange={(e)=> setPass(e.target.value)}
-            type="password" placeholder="********" id="password" name="password" required/>
-         </form>
-         <Link to="/register"><button style={styles.buttonStyle}>Register</button></Link>
-    </>
-    )
-}
-const styles = { 
-    navbarStyle: { 
-        background: 'tan', 
-        justifyContent: 'flex-end', 
-        display: 'flex', 
-        gap: '1rem', 
-        padding: '0.5rem', }, 
+  return (
+    <div style={styles.container}>
+      <form style={styles.form} onSubmit={handleSubmit}>
+        <h2>Login</h2>
+        <input
+          type="text"
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={styles.input}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={styles.input}
+          required
+        />
+        <button type="submit" style={styles.button}>Login</button>
+        <Link to="/Register" style={styles.button2}>Register Here</Link>
+      </form>
+    </div>
+  );
+};
 
-    buttonStyle: { 
-            padding: '0.5rem 1rem', 
-            background: 'tan', 
-            color: 'white', 
-            border: 'none', 
-            borderRadius: '5px', 
-            textDecoration: 'none', 
-            cursor: 'pointer', }, 
-        };
 export default Login;

@@ -10,3 +10,12 @@
   margin: 5px;
   line-height: 3;
 }
+.navbar {
+  box-sizing: border;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 2em;
+  color: tan;
+  }

@@ -5,9 +5,9 @@ const styles = {
   navbarStyle: {
     background: 'tan',
     justifyContent: 'flex-end',
-    display: 'flex', 
-    gap: '1rem', 
-    padding: '0.5rem', 
+    display: 'flex',  
+    padding: '.95 rem', 
+    marginTop: '0px',
   },
 };
 

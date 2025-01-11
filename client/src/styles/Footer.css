@@ -1,12 +1,38 @@
-.footer {
-    background: #FDF5E6;
-    height: 200px;
-  }
-  
-  .footer h1 {
-    margin: 0;
-    padding-top: 75px;
-    text-align: center;
-    color: white;
-    font-size: 3rem;
-  }
+
+  .LEFT {
+    position:relative;
+    bottom: 0px;
+    float: left;
+    height: 35px;
+    margin: 0px 50px 0px 0px;
+    background: tan;
+    color: #000;
+    text-align: left;
+    padding: 10px 30px;
+}
+.RIGHT {
+  position:relative;
+  bottom: 0px;
+  float: right;
+  height: 50px;
+  margin: -5px 0 0 0;
+  background: tan;
+  color: #000;
+  text-align: right;
+  padding: 10px 25px;
+  margin-bottom: 5em;
+  top: -100px;
+}
+.CENTER {
+  bottom: 0px;
+  float: center;
+  height: 50px;
+  margin: 0px 0px 0px 0px;
+  background: tan;
+  color: #000;
+  text-align: center;
+  padding: 10px 30px;
+}
+.centerList {
+  text-align: center;
+}

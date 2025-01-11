@@ -15,30 +15,30 @@ function Footer() {
   return (
     <footer style={styles.footerStyle} className="footer">
       <hr className = "footer-seperator" />
-      <h1 style={styles.footerStyle}>Recipe-Saver</h1>
       <div className="row">
-            <div className="LEFT col-md-3 text-center text-md-left mb-3 mb-md-0">
+
+            <div className="LEFT">
                 <img src="./assets/images/logospinnerrescaled.png" alt="Logo" class="img-fluid mb-2"/>
                 <p className="small"><b>© 2024 Ctrl Alt Elite. All rights reserved.</b></p>
             </div>
     
-            <div className="CENTER col-md-3 text-center text-md-left mb-3 mb-md-0">
+            <div className="CENTER col-md-3 text-center text-md-left">
                 <h5><b>Contact Us</b></h5>
-                <ul className="list-unstyled">
-                    <li>Email: <a href="mailto:info@company.com" class="text-white">info@company.com</a></li>
-                    <li>Phone: <a href="tel:+1234567890" class="text-white">+1 234 567 890</a></li>
-                    <li>Address: 123 Street, City, Country</li>
+                <ul className="centerList list-unstyled">
+                    <ul>Email: <a href="mailto:info@company.com" class="text-white">info@company.com</a></ul>
+                    <ul>Phone: <a href="tel:+1234567890" class="text-white">+1 234 567 890</a></ul>
+                    <ul>Address: 123 Street, City, Country</ul>
                 </ul>
             </div>
     
             
-            <div className="col-md-3 text-center text-md-left">
+            <div className="CENTER col-md-3 text-center text-md-left">
                 <h5><b>Follow Us</b></h5>
                 <a href="https://www.facebook.com/zuck/" class="text-white" target="_blank">Facebook</a> | 
                 <a href="https://x.com/elonmusk" class="text-white" target="_blank">Twitter</a> | 
                 <a href="https://www.instagram.com/zuck/" class="text-white" target="_blank">Instagram</a>
             </div>
-            <div className="RIGHT col-md-3 text-center text-md-left">
+            <div className="RIGHT">
                 <h5><b>Development Team</b></h5>
                 <ul class="list-unstyled">
                     <li>Rosemarie Lupi: <a href="https://github.com/RML-png">RML-png</a></li>
@@ -48,9 +48,7 @@ function Footer() {
                     <li>Sonu Singh: <a href="https://github.com/shoc71">shoc71</a></li>
                 </ul>
             </div>
-
         </div>
-        <hr className = "footer-seperator" />
     </footer>
   );
 }
