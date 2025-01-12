@@ -1,40 +1,49 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import 'bootstrap/dist/css/bootstrap.css';
 import './App.css'
-import Header from "./components/Header";
-import Section from "./components/Section";
-import Navbar from "./components/Navbar";
-import Header from "./components/Footer";
 
-function grocery() {
-    return (
-        <div className="main-container">
-          <div className="container">
-            <div className="p-5 mb-4 bg-light">
-            <div>
-      <Navbar />
-      <Header />
-      <Section />
-      <Footer />
+const Grocery = () => {
+  const [items, setItems] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      const response = await fetch('https://api.example.com/grocery-items');
+      const data = await response.json();
+      setItems(data);
+    };
+
+    fetchItems();
+  }, []);
+
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+  };
+
+  return (
+    <div>
+      <h1>Grocery Store</h1>
+      <h2>Items</h2>
+      <ul>
+        {items.map(item => (
+          <li key={item.id}>
+            {item.name} - ${item.price}
+            <button onClick={() => addToCart(item)}>Add to Cart</button>
+          </li>
+        ))}
+      </ul>
+
+      <h2>Shopping Cart</h2>
+      <ul>
+        {cart.map((item, index) => (
+          <li key={index}>
+            {item.name} - ${item.price}
+          </li>
+        ))}
+      </ul>
     </div>
-    
-    <h1>My cart</h1>
-<div class = "container">
-    <div class = "row">
-              <h2 className="col order-first">Item image</h2>
-              <h2 className="col order-second">Item</h2>
-              <h2 className="col order-third">Price</h2>              
-              <h2 className="col order-forth">Quantity</h2>
-              <h2 className="col order-fifth">Store</h2>
-              <h2 className="col order-sixth">Delete</h2>
-            </div>
-        </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
+  );
+};
 
-export default grocery
+export default Grocery;

@@ -18,6 +18,7 @@ function Navbar() {
       {/* Use Link for internal navigation */}
       <Link to="/">Home</Link>
       <Link to="/recipes">Recipes</Link>
+      <Link to="/grocery">Grocery List</Link>
       <Link to="/login">Login</Link>
     </nav>
   );
