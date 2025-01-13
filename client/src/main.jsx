@@ -9,6 +9,7 @@ import Login from './Pages/login.jsx'
 import Register from './Pages/register.jsx'
 import RecipePage from './Pages/recipes.jsx';
 import GroceryPage from './Pages/grocery.jsx';
+import HomePage from './Pages/homepage.jsx';
 
 // Define the routes using createBrowserRouter
 const router = createBrowserRouter([
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>Home Page</div>, 
+        element: <HomePage /> 
       },
       {
         path: '/login',
