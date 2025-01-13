@@ -24,7 +24,7 @@ function Footer() {
         {/* Left Section */}
         <div className="col-md-4 text-center text-md-left" style={styles.section}>
           <img
-            src="./assets/images/logospinnerrescaled.png"
+            src="../../assets/main.png"
             alt="Logo"
             className="img-fluid mb-2"
           />
