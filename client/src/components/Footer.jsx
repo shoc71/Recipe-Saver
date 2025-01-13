@@ -18,7 +18,7 @@ function Footer() {
       <div className="row">
 
             <div className="LEFT">
-                <img src="./assets/images/logospinnerrescaled.png" alt="Logo" class="img-fluid mb-2"/>
+                <img src="../assets/icons/main.png" alt="Logo" class="img-fluid mb-2"/>
                 <p className="small"><b>© 2024 Ctrl Alt Elite. All rights reserved.</b></p>
             </div>
     
