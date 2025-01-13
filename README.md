@@ -1,14 +1,33 @@
 # Recipe-Saver
 Our goal with this project is to create a web app that one can use to input the user's pantry supplies and pull recipes from a database and across the web that can be made using what they have on hand.
 
-## User Story
-GIVEN I am hungry and do not want to order out
-WHEN I want to cook dinner for myself
-THEN I want an app to tell me what recipes I can make with my current pantry
-WHEN I add ingredients to the site
-THEN I want real-time updates to display recipes that respond to the updated ingredients list
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Technologies](#technologies)
+- [Screenshot](#screenshot)
+- [Developers](#developers)
+- [GitHub Info](#github-info)
+- [Questions](#questions)
 
-## Technologies Used
+## Installation
+
+node and npm need to be installed
+
+```cd server and type npm run dev```
+```cd ../client npm start```
+
+## Usage
+After competing the installion instructions type up in the CLI (terminal), navigate to the code's location using the "cd" cd server and type npm start
+cd ../client npm star
+
+## Contribution
+
+Fork repo, make changes, and request a merge.
+If you idenitfy any security or performance issues or any major improvements, raise an issue and let the community know.
+
+## Technologies
 Application uses a Node.js and Express.js back end and uses both GET and POST routes for retrieving and adding new data.
 
 Application has a folder structure that follows the separation of concerns design principle and uses React for the front end.
@@ -25,6 +44,9 @@ Application uses React for the front end.
 
 Application uses API to communicate and grab recipe and grocery information.
 
+## Screenshot
+![alt text](image.png)
+
 ## References
 We had some help with our code by using the following sites and videos
 ```md
@@ -38,10 +60,24 @@ We had some help with our code by using the following sites and videos
 * bootcamp course and materials
 ```
 
-## Developers and GitHub info
-```md
+```
+
+## GitHub info
+
 Rosemarie Lupi: https://github.com/RML-png username: RML-png
 Courtney Ponder: https://github.com/CourtneyPonder username: CourtneyPonder
 Rosser Williams: https://github.com/rosserw" username: rosserw
 Sonu Singh: https://github.com/shoc71" username: shoc71
 ```
+
+## License
+This project is licensed under the MIT License.
+
+## Questions
+
+For any questions or concerns, please email mrdrlogic@gmail.com
+
+Deployed Webpage: https://shoc71.github.io/Recipe-Saver/
+
+
+
