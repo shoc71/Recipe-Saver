@@ -1,8 +1,8 @@
 -- making database, just in-case not made
 DO $$
 BEGIN
-    IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'recipe-saver') THEN
-        PERFORM dblink_exec('dbname=postgres', 'CREATE DATABASE recipe-saver');
+    IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'recipe_saver') THEN
+        PERFORM dblink_exec('dbname=postgres', 'CREATE DATABASE recipe_saver');
     END IF;
 END
 $$;

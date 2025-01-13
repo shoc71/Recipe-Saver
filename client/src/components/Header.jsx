@@ -1,22 +1,11 @@
-import '../styles/Header.css';
-
-const styles = {
-  headerStyle:
-  {
-    background: 'tan',
-    fontSize: '50px',
-    background: 'tan',  
-    margin: 0,
-    padding:0,
-    
-  }, 
-};
-
+import '../styles/Header.css'; // Keep your custom styles if needed
 
 function Header() {
   return (
-    <header style={styles.headerStyle} className="header">
-      <h1 style={styles.headingStyle}>Recipe-Saver</h1>
+    <header className="py-4" style={{ backgroundColor: 'tan' }}>
+      <div className="container text-center">
+        <h1 className="display-4 text-white">Recipe-Saver</h1>
+      </div>
     </header>
   );
 }

@@ -8,7 +8,7 @@ import NotFoundPage from './Pages/404-not-found.jsx';
 import Login from './Pages/login.jsx'
 import Register from './Pages/register.jsx'
 import RecipePage from './Pages/recipes.jsx';
-import GroceryPage from '../grocery.jsx';
+import GroceryPage from './Pages/grocery.jsx';
 
 // Define the routes using createBrowserRouter
 const router = createBrowserRouter([

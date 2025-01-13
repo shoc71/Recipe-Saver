@@ -1,67 +1,55 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Register = () => {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [fullName, setName] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-  };
-
-  const styles = {
-    container: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-      backgroundColor: 'tan',
-    },
-    form: {
-      backgroundColor: 'tan',
-      padding: '20px',
-      borderRadius: '5px',
-      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
-    },
-    input: {
-      margin: '10px -10px',
-      padding: '10px',
-      border: '1px solid #ccc',
-      borderRadius: '4px',
-      width: '100%',
-    },
-    button: {
-      padding: '10px',
-      backgroundColor: '#F5F5DC',
-      color: '#fff',
-      border: 'none',
-      borderRadius: '4px',
-      cursor: 'pointer',
-    },
-    button2: {
-        padding: '10px',
-        backgroundColor: '#F5F5DC',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '4px',
-        cursor: 'pointer',
-        margin: '20px'
-      },
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/register`, {
+        username,
+        email,
+        password,
+      });
+      setSuccessMessage("Registration successful! Please login.");
+      setErrorMessage('');
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
+    } catch (error) {
+      setErrorMessage("Registration failed. Please try again.");
+      setSuccessMessage('');
+    }
   };
 
   return (
-    <div style={styles.container}>
-      <form style={styles.form} onSubmit={handleSubmit}>
+    <div className="container">
+      <form onSubmit={handleSubmit} className="form-signin">
         <h2>Register:</h2>
+        {successMessage && <div className="alert alert-success">{successMessage}</div>}
+        {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
         <input
           type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="form-control"
+          required
+        />
+        <input
+          type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          style={styles.input}
+          className="form-control"
           required
         />
         <input
@@ -69,19 +57,11 @@ const Register = () => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          style={styles.input}
+          className="form-control"
           required
         />
-        <input
-          type="name"
-          placeholder="Full Name"
-          value={fullName}
-          onChange={(e) => setName(e.target.value)}
-          style={styles.input}
-          required
-        />
-        <button type="submit" style={styles.button}>Submit</button>
-        <Link to="/login" style={styles.button2}>Login Here</Link>
+        <button type="submit" className="btn btn-primary">Submit</button>
+        <Link to="/login" className="btn btn-secondary">Login Here</Link>
       </form>
     </div>
   );

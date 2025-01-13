@@ -1,66 +1,45 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-  };
-
-  const styles = {
-    container: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-      backgroundColor: 'tan',
-    },
-    form: {
-      backgroundColor: 'tan',
-      padding: '20px',
-      borderRadius: '5px',
-      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
-    },
-    input: {
-      margin: '10px -10px',
-      padding: '10px',
-      border: '1px solid #ccc',
-      borderRadius: '4px',
-      width: '100%',
-    },
-    button: {
-      padding: '10px',
-      backgroundColor: '#F5F5DC',
-      color: '#fff',
-      border: 'none',
-      borderRadius: '4px',
-      cursor: 'pointer',
-    },
-    button2: {
-        padding: '10px',
-        backgroundColor: '#F5F5DC',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '4px',
-        cursor: 'pointer',
-        margin: '20px'
-      },
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
+        username,
+        password,
+      });
+      setSuccessMessage("Login successful!");
+      setErrorMessage('');
+      setTimeout(() => {
+        navigate("/home");  // Redirect to home page after successful login
+      }, 2000);
+    } catch (error) {
+      setErrorMessage("Invalid username or password.");
+      setSuccessMessage('');
+    }
   };
 
   return (
-    <div style={styles.container}>
-      <form style={styles.form} onSubmit={handleSubmit}>
-        <h2>Login</h2>
+    <div className="container">
+      <form onSubmit={handleSubmit} className="form-signin">
+        <h2>Login:</h2>
+        {successMessage && <div className="alert alert-success">{successMessage}</div>}
+        {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
         <input
           type="text"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={styles.input}
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="form-control"
           required
         />
         <input
@@ -68,11 +47,11 @@ const Login = () => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          style={styles.input}
+          className="form-control"
           required
         />
-        <button type="submit" style={styles.button}>Login</button>
-        <Link to="/Register" style={styles.button2}>Register Here</Link>
+        <button type="submit" className="btn btn-primary">Login</button>
+        <Link to="/register" className="btn btn-secondary">Register Here</Link>
       </form>
     </div>
   );
