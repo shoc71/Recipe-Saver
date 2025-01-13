@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Button, Card, CardBody, CardTitle, CardText } from "reactstrap"; // Importing Bootstrap components
 
 const fetchRecipesFromTasty = async (query) => {
   const apiUrl = "https://tasty.p.rapidapi.com/recipes/list";
@@ -45,7 +46,7 @@ const RecipePage = () => {
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState(null);
 
-    const fetchCombinedRecipes = async () => {
+  const fetchCombinedRecipes = async () => {
     console.log("Fetching recipes...");
     try {
       const [tastyRecipes, ninjaRecipes] = await Promise.all([
@@ -67,42 +68,60 @@ const RecipePage = () => {
     fetchCombinedRecipes();
   };
 
+  const handleLike = (recipeName) => {
+    const likedRecipes = JSON.parse(localStorage.getItem("likedRecipes")) || [];
+    if (!likedRecipes.includes(recipeName)) {
+      likedRecipes.push(recipeName);
+      localStorage.setItem("likedRecipes", JSON.stringify(likedRecipes));
+      alert(`${recipeName} has been liked!`);
+    }
+  };
+
   return (
-    <div>
+    <div className="container mt-5">
       <h1>Recipe Finder</h1>
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className="mb-4">
         <input
           type="text"
+          className="form-control"
           placeholder="Search for a recipe..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <Button color="primary" type="submit" className="mt-3">Search</Button>
       </form>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-      <div>
+      <div className="row">
         {recipes.length > 0 && <h2>Recipes:</h2>}
         {recipes.map((recipe, index) => (
-            <div key={index}>
-            <h3>{recipe.name || recipe.title}</h3>
-            {Array.isArray(recipe.ingredients) ? (
+          <div key={index} className="col-md-4 mb-4">
+            <Card>
+              <CardBody>
+                <CardTitle tag="h5">{recipe.name || recipe.title}</CardTitle>
+                <CardText>{recipe.description || "No description available"}</CardText>
+                <h6>Ingredients:</h6>
                 <ul>
-                {recipe.ingredients.map((ingredient, i) => (
-                    <li key={i}>{ingredient}</li>
-                ))}
+                  {Array.isArray(recipe.ingredients) ? (
+                    recipe.ingredients.map((ingredient, i) => (
+                      <li key={i}>{ingredient}</li>
+                    ))
+                  ) : (
+                    <li>{recipe.ingredients}</li> // For string ingredients
+                  )}
                 </ul>
-            ) : recipe.ingredients ? (
-                <p>Ingredients: {recipe.ingredients}</p> // Render string ingredients
-            ) : (
-                <p>No ingredients provided.</p>
-            )}
-            {recipe.price && <p>Estimated Price: ${recipe.price}</p>}
-            </div>
+                <Button
+                  color="success"
+                  onClick={() => handleLike(recipe.name || recipe.title)}
+                >
+                  Like Recipe
+                </Button>
+              </CardBody>
+            </Card>
+          </div>
         ))}
-        </div>
-
+      </div>
     </div>
   );
 };
