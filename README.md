@@ -1,6 +1,13 @@
 # Recipe-Saver
 Our goal with this project is to create a web app that one can use to input the user's pantry supplies and pull recipes from a database and across the web that can be made using what they have on hand.
 
+## Table of Contents
+- [User Story](#user-story)
+- [Technologies](#technologies)
+- [Screenshot](#screenshot)
+- [Developers](#developers)
+- [GitHub Info](#github-info)
+
 ## User Story
 GIVEN I am hungry and do not want to order out
 WHEN I want to cook dinner for myself
@@ -8,7 +15,7 @@ THEN I want an app to tell me what recipes I can make with my current pantry
 WHEN I add ingredients to the site
 THEN I want real-time updates to display recipes that respond to the updated ingredients list
 
-## Technologies Used
+## Technologies
 Application uses a Node.js and Express.js back end and uses both GET and POST routes for retrieving and adding new data.
 
 Application has a folder structure that follows the separation of concerns design principle and uses React for the front end.
@@ -25,6 +32,9 @@ Application uses React for the front end.
 
 Application uses API to communicate and grab recipe and grocery information.
 
+## Screenshot
+![alt text](image.png)
+
 ## References
 We had some help with our code by using the following sites and videos
 ```md
@@ -38,7 +48,15 @@ We had some help with our code by using the following sites and videos
 * bootcamp course and materials
 ```
 
-## Developers and GitHub info
+## Developers
+```md
+Rosemarie Lupi
+Courtney Ponder
+Rosser Williams
+Sonu Singh
+```
+
+## GitHub info
 ```md
 Rosemarie Lupi: https://github.com/RML-png username: RML-png
 Courtney Ponder: https://github.com/CourtneyPonder username: CourtneyPonder
