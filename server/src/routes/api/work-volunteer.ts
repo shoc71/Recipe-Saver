@@ -22,7 +22,7 @@ router.get('/', async (_req: Request, res: Response) => {
       message: error.message
     });
   }
-};
+});
 
 // GET /works/:id - Get work by ID
 router.get('/:id', async (req: Request, res: Response) => {
