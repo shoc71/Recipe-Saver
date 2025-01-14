@@ -56,7 +56,7 @@ function Footer() {
           <h5><b>Development Team</b></h5>
           <ul className="list-unstyled">
             <li>Rosemarie Lupi: <a href="https://github.com/RML-png" className="text-white">RML-png</a></li>
-            <li>Mickey Darty: <a href="https://github.com/TilesTwenty" className="text-white">TilesTwenty</a></li>
+            {/* <li>Mickey Darty: <a href="https://github.com/TilesTwenty" className="text-white">TilesTwenty</a></li> */}
             <li>Courtney Ponder: <a href="https://github.com/CourtneyPonder" className="text-white">CourtneyPonder</a></li>
             <li>Rosser Williams: <a href="https://github.com/rosserw" className="text-white">rosserw</a></li>
             <li>Sonu Singh: <a href="https://github.com/shoc71" className="text-white">shoc71</a></li>
